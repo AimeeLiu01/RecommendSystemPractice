@@ -102,6 +102,6 @@ if __name__ == '__main__':
 
     W = UserSimilarity(user_item_index, IIF=False)
     for user in all_user_id:
-        print(user, UserCFRecommend(user, user_item_index, W, k=2))
+        print(user, UserCFRecommend(user, user_item_index, W, k=5))
 
 

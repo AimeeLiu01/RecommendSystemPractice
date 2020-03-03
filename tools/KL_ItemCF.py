@@ -11,7 +11,7 @@ import numpy as np
 import math
 import operator
 
-data = pd.read_excel("order_data2.xlsx")
+data = pd.read_excel("order_data.xlsx")
 data.head(5)
 
 # 将空由0替换
