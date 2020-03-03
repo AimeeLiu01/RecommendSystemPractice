@@ -11,7 +11,7 @@ import numpy as np
 import math
 import operator
 
-data = pd.read_excel("order_data.xlsx")
+data = pd.read_excel("order_data2.xlsx")
 data.head(5)
 
 # 将空由0替换
@@ -24,11 +24,8 @@ user_data = data.groupby("user_id").size()
 user_data = user_data[user_data > 1]
 data = data[data.user_id.isin(user_data.keys())]
 user_list = data.values.tolist()
-print(len(data))
 
 all_product_id = list(set(data["product_id"].values.tolist()))
-print(len(all_product_id))
-
 
 product_to_index = {}
 index_to_product = {}
@@ -116,11 +113,8 @@ def getMostSimilar(matrix_w,index,k):
     return similar_item_dic
 
 
-getMostSimilar(matrix_w,0,10)
-
-like_list = np.where(user_like_item_dic[753664] > 0)
-print(like_list)
-
+#getMostSimilar(matrix_w,0,10)
+#like_list = np.where(user_like_item_dic[753664] > 0)
 
 
 def reommendItem(user_id,matrix_w,user_like_item_dic,k):
@@ -146,9 +140,9 @@ def reommendItem(user_id,matrix_w,user_like_item_dic,k):
 
 
 
-recommend_dic = reommendItem(27,matrix_w,user_like_item_dic,10)
-print("------------------")
-print(recommend_dic)
+# recommend_dic = reommendItem(27,matrix_w,user_like_item_dic,10)
+# print("------------------")
+# print(recommend_dic)
 
 #第五步给用户推荐商品
 def getAllUserRecommend():

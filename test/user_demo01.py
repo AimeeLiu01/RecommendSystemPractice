@@ -113,4 +113,3 @@ if __name__ == '__main__':
     print("movie id list:", recommendations)
     print("near list:", user_sim[:15])
 
-    
